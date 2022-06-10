@@ -39,38 +39,38 @@ A great test manager system
 ### apollo
 ```text
 功能: 多功能中间件服务器
-语言: 
-框架: 
+语言: python
+框架: fastapi
 ```
 ### ares
 ```text
 功能: 性能测试服务
-语言: 
-框架: 
+语言: python and golang
+框架: locust + wrk
 ```
 ### artemis
 ```text
 功能: Bug管理系统
-语言: 
-框架: 
+语言: python
+框架: Django + Template
 ```
 ### athena
 ```text
 功能: Dashboard
-语言: 
-框架: 
+语言: python
+框架: flask + VUE
 ```
 ### demeter
 ```text
 功能: Mock Server
 语言: python
-框架: 
+框架: fastapi + faker
 ```
 ### hephaestus
 ```text
 功能: 日志服务器
-语言: 
-框架: 
+语言: golang
+框架: iris + mongodb
 ```
 ### hera
 ```text
@@ -114,7 +114,3 @@ A great test manager system
 ```text
 
 ```
-
-
-
-
