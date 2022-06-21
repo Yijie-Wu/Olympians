@@ -1,11 +1,12 @@
 import os
 
 import click
-from flask import Flask, jsonify
-from flask_wtf.csrf import CSRFError
+from flask import Flask
 
 from .settings import config
 from app.apis.v1 import api_v1
+
+from app.extensions import db
 
 
 def create_app(config_name=None):
@@ -23,11 +24,19 @@ def create_app(config_name=None):
 
 
 def register_extensions(app):
-    pass
+    db.init_app(app)
 
 
 def register_blueprints(app):
     app.register_blueprint(api_v1, url_prefix='/api/v1')
 
 def register_commands(app):
-    pass
+    @app.cli.command()
+    @click.option('--drop', is_flag=True, help='Create after drop.')
+    def initdb(drop):
+        if drop:
+            click.confirm('This operation will delete the database, do you want to continue?', abort=True)
+            db.drop_all()
+            click.echo('Drop tables.')
+        db.create_all()
+        click.echo('Initialized database.')
