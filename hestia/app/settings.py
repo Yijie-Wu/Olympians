@@ -16,7 +16,7 @@ DATA_DIR = join(BASE_DIR, 'data')
 
 class BaseConfig:
     SECRET_KEY = getenv('SECRET_KEY', 'anything you want')
-    FILE_STORE = getenv('FILE_STORE', DATA_DIR)
+    IMAGE_STORE = getenv('IMAGE_STORE', DATA_DIR)
 
     SQLALCHEMY_DATABASE_URI = prefix + join(BASE_DIR, 'data.db')
 
