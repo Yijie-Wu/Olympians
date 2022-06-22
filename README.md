@@ -32,7 +32,7 @@ A great test manager system
 ```
 ### aphrodite
 ```text
-功能: 测试环境管系统
+功能: 测试环境管理系统
 语言: golang
 框架: beego + React
 ```
